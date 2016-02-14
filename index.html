@@ -123,7 +123,7 @@
                 <p>* Nováčci cvičí v pondělí.</p>
                 <p>Trénujeme v budově TJ Sokol Židenice - Gajdošova 18 (viz <a class="page-scroll" href="#contact">kontakt</a>)
                    po celý rok vyjma školních prázdnin (červenec a srpen se necvičí).
-                   Trénink vede hlavní trenér ing. Arnošt Sedlák.</p>
+                   Trénink vede hlavní trenér Ing. Arnošt Sedlák.</p>
 
                    <br><p>Trénink se skládá:</p>
 
@@ -247,11 +247,15 @@ Cena je do 18ti let 1000 Kč na rok, od 18ti let 1300 Kč na kalendářní rok 2
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                <h2>Kontakt a kde nás najdete</h2>
+                <p>Oddíl šermu TJ Sokol Židenice<br>
+                Gajdošova 18<br>
+                Brno-Židenice 615 00<br>
+                <a href="mailto:sermzidenice@email.cz">sermzidenice@email.cz</a><br></p>
+                <p style="align:left">Trenér: Arnošt Sedlák, <a href="mailto:asedlak@nbox.cz">asedlak@nbox.cz</a><br>
+                  Pokladník: František Studený
                 </p>
-                <ul class="list-inline banner-social-buttons">
+                <!-- <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
@@ -261,7 +265,7 @@ Cena je do 18ti let 1000 Kč na rok, od 18ti let 1300 Kč na kalendářní rok 2
                     <li>
                         <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </section>
@@ -272,7 +276,7 @@ Cena je do 18ti let 1000 Kč na rok, od 18ti let 1300 Kč na kalendářní rok 2
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Šerm Židenice 2015</p>
+            <p id="footer_copyright">Copyright &copy; Šerm Židenice</p>
         </div>
     </footer>
 
@@ -291,6 +295,16 @@ Cena je do 18ti let 1000 Kč na rok, od 18ti let 1300 Kč na kalendářní rok 2
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
 
+    <!-- Scripts for blueimp photo gallery -->
+    <script src="js/jquery.blueimp-gallery.min.js"></script>
+    <script src="js/bootstrap-image-gallery.js"></script>
+
+    <!-- Simple script that adds current year to copyright footer -->
+    <script>
+      var year = new Date().getFullYear();
+      var copyright = document.getElementById("footer_copyright").innerHTML;
+      document.getElementById("footer_copyright").innerHTML = copyright + " " + year;
+    </script>
 </body>
 
 </html>
