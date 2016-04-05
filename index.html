@@ -12,6 +12,10 @@
 
     <title>Šerm Židenice</title>
 
+    <!-- Image gallery needed links, used from: https://github.com/blueimp/Bootstrap-Image-Gallery/blob/master/README.md -->
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="css/bootstrap-image-gallery.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,10 +67,10 @@
                         <a class="page-scroll" href="#enrollment">Nábor</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#blueboard">Nástěnka</a>
+                        <a class="page-scroll" href="#blueboard">Aktuálně</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#photo">Foto</a>
+                        <a class="page-scroll" href="#photos">Foto</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Kontakt</a>
@@ -207,37 +211,90 @@ Cena je do 18ti let 1000 Kč na rok, od 18ti let 1300 Kč na kalendářní rok 2
     <section id="blueboard" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Nástěnka</h2>
+                <h2>Aktuálně</h2>
                 <!-- <div class="embed-responsive embed-responsive-4by3">
-                    <iframe src="http://www.blueboard.cz/kniha/xentf3v46rvn7beo4cum168i9f8puu" width="500px" height="400px" frameborder="0" scrolling="yes"/>
+                    <iframe src="https://www.blueboard.cz/kniha/xentf3v46rvn7beo4cum168i9f8puu" frameborder="0" scrolling="no"/>
                 </div> -->
 
-                <!-- <a href="#" class="btn" id="openBtn">Open modal</a>
+                  <!-- Trigger the modal with a button -->
+                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Otevřít nástěnku</button>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Dialog</h3>
-	</div>
-	<div class="modal-body">
-      <iframe src="" style="zoom:0.60" frameborder="0" height="250" width="99.6%"></iframe>
-	</div>
-	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal">OK</button>
-	</div>
-</div> -->
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="margin:80px auto">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Nástěnka</h4>
+                        </div>
+                        <div class="modal-body style="padding:5px"">
+                          <iframe src="https://www.blueboard.cz/kniha/xentf3v46rvn7beo4cum168i9f8puu" frameborder="0" height="450px" width="100%"></iframe>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" style="color:black"></h4>
+                    </div>
+                    <div class="modal-body next"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left prev">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            Předchozí
+                        </button>
+                        <button type="button" class="btn btn-default next">
+                            Další
+                            <i class="glyphicon glyphicon-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="photos" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <h2>Fotogalerie</h2>
+                <div id="links">
+                    <a href="photos/1.jpg" title="Z oddílového turnaje v kordu" data-gallery>
+                        <img src="photos/1.jpg" width="200px" height="100px" alt="Z oddílového turnaje v kordu">
+                    </a>
+                    <a href="photos/2.jpg" title="Z oddílového turnaje v kordu" data-gallery>
+                        <img src="photos/2.jpg" width="200px" height="100px" alt="Z oddílového turnaje v kordu">
+                    </a>
+                    <a href="photos/3.jpg" title="Souboj" data-gallery>
+                        <img src="photos/3.jpg" width="130px" height="100px" alt="Souboj">
+                    </a>
+                    <a href="photos/4.jpg" title="Souboj" data-gallery>
+                        <img src="photos/4.jpg" width="130px" height="100px" alt="Souboj">
+                    </a>
                 </div>
             </div>
         </div>
